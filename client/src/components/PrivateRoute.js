@@ -6,8 +6,8 @@ import { Route, Redirect} from 'react-router-dom';
 //2. It renders the same component if we are logged in with the same props.
 //3. Redirect to login if not logged in.
 
-const PrivateRoute = () => {
-    
+const PrivateRoute = (props) => {
+    return <Route {...props}/>
 }
 
 export default PrivateRoute;

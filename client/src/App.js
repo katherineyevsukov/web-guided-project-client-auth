@@ -5,6 +5,7 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import GasPrices from './components/GasPrices';
 
+import PrivateRoute from './components/PrivateRoute';
 
 const UserSection = ()=> {
   return (<p>Welcome {localStorage.getItem("username")}</p>);
