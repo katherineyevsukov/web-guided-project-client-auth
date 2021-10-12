@@ -6,10 +6,12 @@ import Logout from './components/Logout';
 import GasPrices from './components/GasPrices';
 
 function App() {
+  const isLoggedIn = true;
+  
   return (
     <Router>
       <div className="App">
-        
+
         <ul>
           <li>
             <Link to="/login">Login</Link>
