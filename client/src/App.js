@@ -6,7 +6,12 @@ import Logout from './components/Logout';
 import GasPrices from './components/GasPrices';
 
 function App() {
-  let isLoggedIn = localStorage.getItem("token");
+  const [state, setState] = useState({
+    isLoggedIn:false,
+    role:"",
+    username:""
+  });
+  // let isLoggedIn = localStorage.getItem("token");
 
   return (
     <Router>
@@ -21,7 +26,7 @@ function App() {
           </li>
           <li>
             {/* {isLoggedIn ? <Link to="/protected">Protected Page</Link> : <div></div>} */}
-            { isLoggedIn && <Link to="/protected">Protected Page</Link> }
+            { state.isLoggedIn && <Link to="/protected">Protected Page</Link> }
           </li>
         </ul>
 
