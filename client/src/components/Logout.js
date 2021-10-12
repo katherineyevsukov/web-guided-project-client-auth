@@ -1,15 +1,11 @@
 import React, { useEffect } from "react";
-import axios from 'axios';
+import axiosWithAuth from './../utils/axiosWithAuth';
 
 const Logout = () => {
-    const token = localStorage.getItem("token");
-
     useEffect(()=> {
-        axios.post('http://localhost:5000/api/logout', {
-            headers: {
-                authorization: token
-            }
-        }).then(resp=>{
+        axiosWithAuth()
+            .post('http://localhost:5000/api/logout')
+            .then(resp=>{
             localStorage.removeItem("token");
         }).catch(err=> {
             console.log(err);
