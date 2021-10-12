@@ -9,7 +9,13 @@ class GasPrices extends React.Component {
   };
 
   componentDidMount() {
-    axios.
+    axios.get('http://localhost:5000/api/data')
+      .then(resp=> {
+        console.log(resp);
+      })
+      .catch(err=> {
+        console.log(err);
+      })
   }
 
   formatData = () => {
