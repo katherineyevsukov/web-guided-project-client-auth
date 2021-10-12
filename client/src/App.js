@@ -9,6 +9,7 @@ function App() {
   return (
     <Router>
       <div className="App">
+        
         <ul>
           <li>
             <Link to="/login">Login</Link>
@@ -20,6 +21,7 @@ function App() {
             <Link to="/protected">Protected Page</Link>
           </li>
         </ul>
+
         <Switch>
           <Route exact path="/protected" component={GasPrices} />
           <Route path="/logout" component={Logout} />
