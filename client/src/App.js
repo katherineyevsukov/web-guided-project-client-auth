@@ -5,6 +5,11 @@ import Login from './components/Login';
 import Logout from './components/Logout';
 import GasPrices from './components/GasPrices';
 
+
+const UserSection = ()=> {
+  return (<p>Welcome {localStorage.getItem("username")}</p>);
+}
+
 function App() {
   // const [state, setState] = useState({
   //   isLoggedIn:false,
@@ -25,7 +30,7 @@ function App() {
             <Link to="/logout">Logout</Link>
           </li>
           {
-            localStorage.getItem("role") === "admin" && <li><Link to="/admin">Admin</Link></li>
+            (isLoggedIn && localStorage.getItem("role") === "admin") && <li><Link to="/admin">Admin</Link></li>
           }
           
           <li>
@@ -33,7 +38,7 @@ function App() {
             { isLoggedIn && <Link to="/protected">Protected Page</Link> }
           </li>
         </ul>
-        { isLoggedIn && <p>Welcome {localStorage.getItem("username")}</p>}
+        { isLoggedIn && <UserSection/>}
 
         <Switch>
           <Route exact path="/protected" component={GasPrices} />
