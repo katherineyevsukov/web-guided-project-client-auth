@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Redirect} from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 
 //Private Route
 //1. Have the same functionality as Route.
@@ -11,7 +11,7 @@ const PrivateRoute = ({component:Component, ...rest}) => {
         if (localStorage.getItem("token")) {
             return <Component/>
         } else {
-            return <p>Not logged in</p>
+            <Redirect to='/login'/>
         }
         
     }}/>;
