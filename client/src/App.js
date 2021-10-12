@@ -42,8 +42,8 @@ function App() {
         { isLoggedIn && <UserSection/>}
 
         <Switch>
-          <Route exact path="/protected" component={GasPrices} />
-          <Route path="/logout" component={Logout} />
+          <PrivateRoute exact path="/protected" component={GasPrices} />
+          <PrivateRoute path="/logout" component={Logout} />
           <Route path="/login" component={Login} />
           <Route path="/" component={Login} />    
         </Switch>

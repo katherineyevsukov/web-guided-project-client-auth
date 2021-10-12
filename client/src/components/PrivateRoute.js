@@ -7,7 +7,7 @@ import { Route, Redirect} from 'react-router-dom';
 //3. Redirect to login if not logged in.
 
 const PrivateRoute = (props) => {
-    return <Route {...props}/>
+    return <Route {...props}/>;
 }
 
 export default PrivateRoute;
