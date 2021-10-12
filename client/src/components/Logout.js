@@ -10,7 +10,7 @@ const Logout = () => {
                 authorization: token
             }
         }).then(resp=>{
-            console.log(resp);
+            localStorage.removeItem("token");
         }).catch(err=> {
             console.log(err);
         })
