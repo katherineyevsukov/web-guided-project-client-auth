@@ -1,18 +1,21 @@
 import React, { useEffect } from "react";
-import axiosWithAuth from './../utils/axiosWithAuth';
+import axios from 'axios';
+import axiosWithAuth from "../utils/axiosWithAuth";
 
-const Logout = (props) => {
-
+const Logout = (props)=> {
     useEffect(()=> {
         axiosWithAuth()
-            .post('http://localhost:5000/api/logout')
-            .then(resp=>{
-                localStorage.removeItem("token");
-                props.history.push('/login');
+            .post('/logout')
+            .then(resp => {
+              localStorage.removeItem("token");
+              localStorage.removeItem("role");
+              localStorage.removeItem("username");
+              props.history.push('/login');
             }).catch(err=> {
                 console.log(err);
-            })
+            });
     }, []);
+
 
     return(<div></div>);
 }

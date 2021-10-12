@@ -7,20 +7,21 @@ class GasPrices extends React.Component {
   state = {
     gasPrices: []
   };
-
+  
   componentDidMount() {
-    console.log("props:", this.props);
-    
+    console.log('gasPrice props: ', this.props.fetchingData);
     axiosWithAuth()
-      .get('http://localhost:5000/api/data')
+      .get('/data')
       .then(resp=> {
         this.setState({
+          ...this.state,
           gasPrices: resp.data.data
         });
       })
       .catch(err=> {
         console.log(err);
       })
+    
   }
 
   formatData = () => {
